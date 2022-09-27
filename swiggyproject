@@ -1,0 +1,2262 @@
+#include<stdio.h>
+#include<string.h>
+void login1();
+void go();
+void log();
+void chicken_tikka();
+void tandor_chicken();
+void chicken_biryani();
+void chicken_lollipop();
+void Paneer_chilly_Rec();
+void Paneer_crispy_Rec();	
+void Veg_momos_Rec();
+void Veg_Fried_Rice_Rec();
+void chicken_tikka_upd();
+void tandor_chicken_upd();
+void chicken_biryani_upd();
+void chicken_lollipop_upd();
+void Paneer_chilly_upd();
+void Paneer_crispy_upd();	
+void Veg_momos_upd();
+void Veg_Fried_Rice_upd();
+void chicken_tikka_del();
+void tandor_chicken_del();
+void chicken_biryani_del();
+void chicken_lollipop_del();
+void Paneer_chilly_del();
+void Paneer_crispy_del();	
+void Veg_momos_del();
+void Veg_Fried_Rice_del();
+struct project
+{ 
+ char name[40];
+ char add[40];
+ char email[40];
+ char ph[20];
+ }coustomer;
+ 
+struct login 
+{
+	char name[20];
+	char pass[20];
+	
+}l;
+
+main()
+{
+	char ch;
+	 int n;   
+	
+	printf("*********************************************** WELCOME TO SWIGGY ***********************************************\n");
+	printf("\n\t\t\t\t------------------------------------------");
+	printf("\n\t\t\t\t<<<<<<<<<<<<<<<< LOGIN-PAGE >>>>>>>>>>>>>>");
+	printf("\n\t\t\t\t------------------------------------------");
+	
+	printf("\n\n\t\t\t\t\t\tSelect Your Login");
+	printf("\n\t\t\t\t\t\t1.....SIGN UP");
+	
+	printf("\n\t\t\t\t\t\t2.....SIGN IN");
+	scanf("%d",&n);
+	if(n==1)
+	{
+		
+	
+	 	char u[20],p[20];
+		FILE *fp;
+		fp=fopen("login1.txt","w");
+		
+		printf("\n\t\t\t\t\t\tEnter Username:");
+		scanf("%s",l.name);
+		printf("\n\t\t\t\t\t\tEnter Password:");
+		scanf("%s",l.pass);
+	
+		fprintf(fp,"\n\n%s \n\n%s",l.name,l.pass);
+	    printf("\n\t\t\t\t------------------------------------------");
+		printf("\n\t\t\t\t<<<<<<<<<<<<< REGISTRATION DONE >>>>>>>>>>");
+		printf("\n\t\t\t\t------------------------------------------");
+		
+		fclose(fp);
+		
+		 login1();
+    }
+	else if(n==2)
+	{
+		log();
+		
+	}
+	else if(n>=2)
+	{
+		printf("\nPlease Enter Right Login....");
+	}
+   
+	
+
+}
+void login1()
+{
+	char ch;
+	printf("\n\t\t\t\t DO U WANT TO SIGN IN RIGHT NOW PRESS 'y' ");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		log();	
+	
+    }
+}
+void log()
+{
+			    char u[20],p[20];
+			    printf("\n \t\t\t\t SIGN IN");
+				printf("\n\t\t\t\t------------------------------------------");
+				printf("\n\t\t\t\t<<<<<<<<<<<<<<<< LOGIN HERE >>>>>>>>>>>>>>\n");
+				printf("\t\t\t\t------------------------------------------\n");
+	
+				printf("\t\t\t\t\t\tEnter Username: ");
+				scanf("%s",u);
+				printf("\t\t\t\t\t\tEnter Password: ");
+				scanf("%s",p);
+			
+				FILE *fp1;
+				fflush(stdin);
+	
+				fp1=fopen("login1.txt","r");
+				
+				while(fscanf(fp1,"\n %s %s",l.name,l.pass)!=EOF)
+				{
+					if(((strcmp(l.name,u)==0))&&((strcmp(l.pass,p)==0)))
+			   		{
+			    		printf("\n\t\t\t\t------------------------------------------");
+						printf("\n\t\t\t\t<<<<<<<<<<<<<<< LOGIN CORRECT >>>>>>>>>>>>");
+						printf("\n\t\t\t\t------------------------------------------");
+						go();
+			   	 	}			 		
+		    	    else 
+			        {
+		 	        	printf("\n\t\t\t\t------------------------------------------");
+						printf("\n\t\t\t\t<<<<<<<<<<<<<< LOGIN INCORRECT >>>>>>>>>>>");
+						printf("\n\t\t\t\t------------------------------------------");
+			        	log();
+ 		   	        }
+ 		   	    	fclose(fp1);
+                }
+			
+	
+}
+void chicken_tikka()
+{   
+    char ch;
+	printf("chicken_tikka_rec");
+    FILE *fp;
+	fp=fopen("chicken_tikka_rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("You dont have any record yet");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+   	fclose(fp);
+   	printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		go();
+	}
+}
+void tandor_chicken()
+{
+	char ch;
+	printf("tandor_chicken_Records");
+    FILE *fp;
+	fp=fopen("tandor_chicken_coustomer_rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("You dont have any record yet");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+   	fclose(fp);
+   	printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		go();
+					   	 	
+	}
+}
+void chicken_biryani()
+{
+	char ch;
+	printf("chicken_biryani_coustomer_Records");
+    FILE *fp;
+	fp=fopen("chicken_biryani_coustomer_rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("You dont have any record yet");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+   	fclose(fp);
+   	printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		go();
+					   	 	
+	}
+}
+void chicken_lollipop()
+{
+	char ch;
+	printf("chicken_lollipop_Records");
+    FILE *fp;
+	fp=fopen("chicken_lollipop_coustomer_rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("You dont have any record yet");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+   	fclose(fp);
+   	printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		go();
+					   	 	
+	}
+}
+void Paneer_chilly_Rec()
+{
+	char ch;
+	printf(" Paneer_chilly_Coustomer_Records");
+    FILE *fp;
+	fp=fopen("Paneer_chilly_Coustomer_Rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("You dont have any record yet");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+   	fclose(fp);
+   	printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		go();
+					   	 	
+	}
+}
+void Paneer_crispy_Rec()
+{
+	char ch;
+	printf("\nPaneer_crispy_Coustomer_Records");
+    FILE *fp;
+	fp=fopen("Paneer_crispy_Coustomer_Rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("You dont have any record yet");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+   	fclose(fp);
+   	printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		go();
+					   	 	
+	}
+}
+void Veg_momos_Rec()
+{
+	char ch;
+	printf("\nVeg_momos_Coustomer_Records");
+    FILE *fp;
+	fp=fopen("Veg_momos_Coustomer_Rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("You dont have any record yet");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+   	fclose(fp);
+   	printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		go();
+					   	 	
+	}
+}
+void Veg_Fried_Rice_Rec()
+{
+	char ch;
+	printf("Veg_Fried_Rice_Coustomer_Records");
+    FILE *fp;
+	fp=fopen("Veg_Fried_Rice_Coustomer_Rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("You dont have any record yet");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+   	fclose(fp);
+   	printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		go();
+					   	 	
+	}
+}
+void chicken_tikka_upd()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("chicken_tikka_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("chicken_tikka_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+				
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("chicken_tikka_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("chicken_tikka_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("chicken_tikka_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else
+			{
+				printf("REC  not found");
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void tandor_chicken_upd()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("tandor_chicken_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("tandor_chicken_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+				
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("tandor_chicken_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("tandor_chicken_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("tandor_chicken_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else
+			{
+				printf("REC  not found");
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void chicken_biryani_upd()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("chicken_biryani_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+			printf("RECORD FOUND");
+		
+			printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("chicken_biryani_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+				
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("chicken_biryani_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("chicken_biryani_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("chicken_biryani_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else
+			{
+				printf("REC  not found");
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void chicken_lollipop_upd()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("chicken_lollipop_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("chicken_lollipop_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+				
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("chicken_lollipop_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("chicken_lollipop_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("chicken_lollipop_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else
+			{
+				printf("REC  not found");
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void Paneer_chilly_upd()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Paneer_chilly_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Paneer_chilly_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+				
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Paneer_chilly_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Paneer_chilly_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Paneer_chilly_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else
+			{
+				printf("REC  not found");
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void Paneer_crispy_upd()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Paneer_crispy_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Paneer_crispy_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+				
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Paneer_crispy_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Paneer_crispy_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Paneer_crispy_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else
+			{
+				printf("REC  not found");
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void Veg_momos_upd()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Veg_momos_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Veg_momos_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+				
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Veg_momos_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Veg_momos_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Veg_momos_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else
+			{
+				printf("REC  not found");
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void Veg_Fried_Rice_upd()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Veg_Fried_Rice_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Veg_Fried_Rice_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+				
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Veg_Fried_Rice_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Veg_Fried_Rice_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Veg_Fried_Rice_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					go();
+					   	 	
+				}
+			}
+			else
+			{
+				printf("REC  not found");
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void chicken_tikka_del()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("chicken_tikka_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);	
+		
+				fp1=fopen("chicken_tikka_rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.email,"                      ");
+				strcpy(coustomer.add,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void tandor_chicken_del()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("tandor_chicken_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);	
+		
+				fp1=fopen("tandor_chicken_coustomer_rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.email,"                      ");
+				strcpy(coustomer.add,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");;
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void chicken_biryani_del()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("chicken_biryani_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);	
+		
+				fp1=fopen("chicken_biryani_coustomer_rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.email,"                      ");
+				strcpy(coustomer.add,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void chicken_lollipop_del()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("chicken_lollipop_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);	
+		
+				fp1=fopen("chicken_lollipop_coustomer_rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.email,"                      ");
+				strcpy(coustomer.add,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void Paneer_chilly_del()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Paneer_chilly_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);	
+		
+				fp1=fopen("Paneer_chilly_Coustomer_Rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.email,"                      ");
+				strcpy(coustomer.add,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"\n\t\t\t\t\t%s\n\t\t\t\t\t%s\n\t\t\t\t\t%s\n\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void Paneer_crispy_del()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Paneer_crispy_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);	
+		
+				fp1=fopen("Paneer_crispy_Coustomer_Rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.email,"                      ");
+				strcpy(coustomer.add,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDo You Want To Continue Shopping PRESS 'Y' And for Exit PRESS 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void Veg_momos_del()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Veg_momos_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);	
+		
+				fp1=fopen("Veg_momos_Coustomer_Rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.email,"                      ");
+				strcpy(coustomer.add,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' And EXIT FOR 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' And EXIT FOR 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void Veg_Fried_Rice_del()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Veg_Fried_Rice_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);	
+		
+				fp1=fopen("Veg_Fried_Rice_Coustomer_Rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.email,"                      ");
+				strcpy(coustomer.add,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s\n\t\t\t\t\t\t%s",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' And EXIT FOR 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' And EXIT FOR 'N'\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						go();
+					   	 	
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+}
+void go()
+{
+	
+	
+		int ch,no,n1,n2,n3,n4;
+		char ch1;
+		printf("\n\t\t\t\t\t Enter your choice");
+		printf("\n\t\t\t\t\t 1.....NON-VEGETARIAN");
+		printf("\n\t\t\t\t\t 2.....VEGETARIAN");
+		printf("\n\t\t\t\t\t 3.....Show Record");
+		printf("\n\t\t\t\t\t 4.....Update record");
+		printf("\n\t\t\t\t\t 5.....Delete Record");
+		scanf("%d",&ch);
+		
+		switch(ch)
+		{
+			case 1:	printf("\n\t\t\t\t------------------------------------------");
+					printf("\n\t\t\t\t<<<<<<<<<<<<<<<<<< NON-VEG >>>>>>>>>>>>>>>\n");
+					printf("\t\t\t\t------------------------------------------\n");
+    	           	printf("\n\t\t\t\t\t   Select your choise");
+    	           	printf("\n\t\t\t\t\t   1...Chicken Tikka Masala");
+					printf("\n\t\t\t\t\t   2...Tandoori Chicken");
+					printf("\n\t\t\t\t\t   3...Chicken Biryani");
+					printf("\n\t\t\t\t\t   4...Chicken Lollipop");
+	               	scanf("%d",&no);
+	          
+	        	  	switch(no)
+	        	 	{
+	        	  		case 1:	printf("\n\t\t\t\t------------------------------------------");
+								printf("\n\t\t\t\t<<<<<<<<<< CHICKEN TIKKA MASALA >>>>>>>>>>");
+								printf("\n\t\t\t\t------------------------------------------");
+					 			printf("\n \t\t\t\t OFFER \t       :GET UPTO 50% OFF ON YOUR FIRST ORDER");
+					 			printf("\n \t\t\t\t Punjabi Rasoi :4.1(500+).47mins");
+								printf("\n \t\t\t\t Quantity      :Half Plate");
+					 			printf("\n \t\t\t\t Rating\t       :Bestseller");
+								printf("\n \t\t\t\t Price\t       :Rs 299/-");
+								printf("\n \t\t\t\t +3 plain Tandoori rotis");
+								printf("\n \t\t\t\t Free Delivery");
+					 			printf("\n \t\t\t\t ORDER NOW(Y/N) ");
+				 				fflush(stdin);
+                    			scanf("%c",&ch);
+                    			if((ch=='Y')||(ch=='y'))
+                     			{	
+                     		
+                    				FILE *fp1;
+                    				fp1=fopen("chicken_tikka_rec.txt","a");
+                        			fflush(stdin);            
+                        			printf("\n\t\t\t\t\tEnter you Name:-");
+									scanf("%s",coustomer.name);
+									fflush(stdin);
+        							printf("\n\t\t\t\t\tenter your Email:-");
+									scanf("%s",coustomer.email);
+									fflush(stdin);
+                        			printf("\n\t\t\t\t\tenter your adderess:-");
+									scanf("%s",coustomer.add);
+									fflush(stdin);
+			            			printf("\n\t\t\t\t\tenter your phone number:-");
+									scanf("%s",coustomer.ph);
+									fflush(stdin);
+                         			fprintf(fp1,"%s \n%s \n%s \n%s\n",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+                         
+					   	 			printf("\n\t\t\t\t\tYour Order is confirmed");
+					   	 			printf("\n\t\t\t\t\tDo Want To Continue Purchasing");
+					   	 			fflush(stdin);
+					   	 			scanf("%c",&ch);
+					   	 			if((ch=='Y')||(ch=='y'))
+					   	 			{
+					   	 				go();
+					   	 	
+						 			}    
+                         			fclose(fp1); 
+                         				
+				     			}	
+                     			break;
+					    case 2:	printf("\n\t\t\t\t------------------------------------------");
+								printf("\n\t\t\t\t<<<<<<<<<< TANDOORI CHICKEN >>>>>>>>>>");
+								printf("\n\t\t\t\t------------------------------------------");
+								printf("\n \t\t\t\t OFFER\t  : GET UPTO 50% OFF ON YOUR ORDER");
+				 				printf("\n \t\t\t\t COURSE\t  : Main-Course,Starter");
+								printf("\n \t\t\t\t QUALITY  : Fresh Food");
+								printf("\n \t\t\t\t QUANTITY : Full-Plate");
+				 				printf("\n \t\t\t\t CATEGORY : Non-veg");
+				 				printf("\n \t\t\t\t PRICE\t  : Rs 499/-");
+								printf("\n \t\t\t\t FREE DELIVERY");
+				 				printf("\n \t\t\t\t ORDER NOW(Y/N)");
+				 				fflush(stdin);
+                    			scanf("%c",&ch);
+                     			if((ch=='Y')||(ch=='y'))
+                     			{
+                     	
+                     				FILE *fp2;
+                         			fp2=fopen("tandor_chicken_coustomer_rec.txt","a");
+                         			fflush(stdin);            
+                         			printf("\n \t\t\t\t Enter Your Name:-");
+						 			scanf("%s",coustomer.name);
+						 			fflush(stdin);
+                         			printf("\n \t\t\t\t Enter Your Email:-");
+									scanf("%s",coustomer.email);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Adderess:-");
+									scanf("%s",coustomer.add);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Phone Number:-");
+									scanf("%s",coustomer.ph);
+									fflush(stdin);
+                         			fprintf(fp2,"%s \n%s \n%s \n%s\n",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+                         
+					   				printf("\n \t\t\t\t Your Order is confirmed");
+					   				printf("\n \t\t\t\t Do Want To Continue Purchasing");
+					   	 			fflush(stdin);
+					   	 			scanf("%c",&ch);
+					   	 			if((ch=='Y')||(ch=='y'))
+					   				{
+					   				 	go();
+					   	 	
+									}
+                         			fclose(fp2); 
+                         		}
+					 			break;
+					 	case 3: printf("\n\t\t\t\t------------------------------------------");
+								printf("\n\t\t\t\t<<<<<<<<<<<<< CHICKEN BIRYANI >>>>>>>>>>>>");
+								printf("\n\t\t\t\t------------------------------------------");
+								printf("\n \t\t\t\t OFFER\t  : GET UPTO 50% OFF ON YOUR FIRST ORDER");
+								printf("\n \t\t\t\t COURSE\t  : Main-Course");
+								printf("\n \t\t\t\t QUALITY  : Fresh Food");
+								printf("\n \t\t\t\t QUANTITY : Full-Plate");
+				 				printf("\n \t\t\t\t CATEGORY : Non-veg");
+				 				printf("\n \t\t\t\t PRICE\t  : Rs 699/-");
+								printf("\n \t\t\t\t FREE DELIVERY");
+				 				printf("\n \t\t\t\t ORDER NOW(Y/N)");
+				 				fflush(stdin);
+                    			scanf("%c",&ch);
+                     			if((ch=='Y')||(ch=='y'))
+                     			{	
+                     		
+                     				FILE *fp3;
+                         			fp3=fopen("chicken_biryani_coustomer_rec.txt","a");
+                         			fflush(stdin);            
+                         			printf("\n \t\t\t\t Enter Your Name:-");
+						 			scanf("%s",coustomer.name);
+						 			fflush(stdin);
+                         			printf("\n \t\t\t\t Enter Your Email:-");
+									scanf("%s",coustomer.email);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Adderess:-");
+									scanf("%s",coustomer.add);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Phone Number:-");
+						 			scanf("%s",coustomer.ph);
+									fflush(stdin);
+                         			fprintf(fp3,"%s \n%s \n%s \n%s\n",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+                         
+					   	 			printf("\n \t\t\t\t Your Order is confirmed");
+					   				printf("\n \t\t\t\t Do Want To Continue Purchasing");
+					   	 			fflush(stdin);
+					   	 			scanf("%c",&ch);
+					   	 			if((ch=='Y')||(ch=='y'))
+					   	 			{
+					   	 				go();
+					   	 	
+						 			}
+                      				fclose(fp3); 
+                           		}
+				     			break;
+				     	case 4:	printf("\n\t\t\t\t------------------------------------------");
+								printf("\n\t\t\t\t<<<<<<<<<<<<< CHICKEN LOLLIPOP >>>>>>>>>>>");
+								printf("\n\t\t\t\t------------------------------------------");
+								printf("\n \t\t\t\t OFFER\t  : GET UPTO 50% OFF ON YOUR FIRST ORDER");
+								printf("\n \t\t\t\t COURSE\t  : Main-Course");
+								printf("\n \t\t\t\t QUALITY  : Fresh Food");
+								printf("\n \t\t\t\t QUANTITY : Full-Plate");
+				 				printf("\n \t\t\t\t CATEGORY : Non-veg");
+				 				printf("\n \t\t\t\t PRICE\t  : Rs 599/-");
+								printf("\n \t\t\t\t FREE DELIVERY");
+				 				printf("\n \t\t\t\t ORDER NOW(Y/N)");
+				 				fflush(stdin);
+                    			scanf("%c",&ch);
+                     			if((ch=='Y')||(ch=='y'))
+                     			{	
+                     		
+                     				FILE *fp4;
+                        			fp4=fopen("chicken_lollipop_coustomer_rec.txt","a");
+                     				fflush(stdin);            
+                    				printf("\n \t\t\t\t Enter Your Name:-");
+						 			scanf("%s",coustomer.name);
+						 			fflush(stdin);
+                         			printf("\n \t\t\t\t Enter Your Email:-");
+									scanf("%s",coustomer.email);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Adderess:-");
+									scanf("%s",coustomer.add);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Phone Number:-");
+						 			scanf("%s",coustomer.ph);
+									fflush(stdin);
+                        			fprintf(fp4,"%s \n%s \n%s \n%s\n",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+                         
+					   				printf("\n \t\t\t\t Your Order is confirmed");
+					   				printf("\n \t\t\t\t Do Want To Continue Purchasing");
+					   				fflush(stdin);
+					   	 			scanf("%c",&ch);
+					   	 			if((ch=='Y')||(ch=='y'))
+									{
+					 				  	go();
+					   				}
+					   	 			fclose(fp4); 
+                       							  	
+                       			}
+								break;  	
+                                default: printf("\n Please Select Your Right Choise");
+					}
+					break;
+			case 2:	printf("\n\t\t\t\t------------------------------------------");
+					printf("\n\t\t\t\t<<<<<<<<<<<<<<<< VEGETARIAN >>>>>>>>>>>>>>\n");
+					printf("\t\t\t\t------------------------------------------\n");
+					printf("\n \t\t\t\t\t Select your choise");
+    	           	printf("\n \t\t\t\t\t 1...Paneer Chilly");
+    	           	printf("\n \t\t\t\t\t 2...Paneer Crispy");
+    	           	printf("\n \t\t\t\t\t 3...Veg Momos");
+    	           	printf("\n \t\t\t\t\t 4...Veg.Fried Rice");
+	               	scanf("%d",&no);
+	          
+	        	  switch(no)
+	        	  {
+	        	  		case 1:	printf("\n\t\t\t\t------------------------------------------");
+								printf("\n\t\t\t\t<<<<<<<<<<<<<< PANEER CHILLY >>>>>>>>>>>>>");
+								printf("\n\t\t\t\t------------------------------------------");
+								printf("\n \t\t\t\t OFFER\t  : GET UPTO 50% OFF ON YOUR FIRST ORDER");
+								printf("\n \t\t\t\t COURSE\t  : Starter");
+								printf("\n \t\t\t\t QUALITY  : Fresh Food");
+								printf("\n \t\t\t\t QUANTITY : Half-Plate");
+				 				printf("\n \t\t\t\t CATEGORY : Veg");
+				 				printf("\n \t\t\t\t PRICE\t  : Rs 399/-");
+								printf("\n \t\t\t\t FREE DELIVERY");
+				 				printf("\n \t\t\t\t ORDER NOW(Y/N)");
+				 				fflush(stdin);
+                    			scanf("%c",&ch);
+                    			if((ch=='Y')||(ch=='y'))
+                     			{	
+                     		
+                    				FILE *fp31;
+                    				fp31=fopen("Paneer_chilly_Coustomer_Rec.txt","a");
+                        			fflush(stdin);            
+                        			printf("\n \t\t\t\t Enter Your Name:-");
+						 			scanf("%s",coustomer.name);
+						 			fflush(stdin);
+                         			printf("\n \t\t\t\t Enter Your Email:-");
+									scanf("%s",coustomer.email);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Adderess:-");
+									scanf("%s",coustomer.add);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Phone Number:-");
+						 			scanf("%s",coustomer.ph);
+									fflush(stdin);
+                         			fprintf(fp31,"%s \n%s \n%s \n%s\n",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+                         
+					   	 			printf("\n \t\t\t\t Your Order is confirmed");
+					   				printf("\n \t\t\t\t Do Want To Continue Purchasing");
+					   	 			fflush(stdin);
+					   	 			scanf("%c",&ch);
+					   	 			if((ch=='Y')||(ch=='y'))
+					   	 			{
+					   	 				go();
+					   	 			}	    
+                         			fclose(fp31); 
+                         			
+				     			}
+								break;	
+                     	case 2: printf("\n\t\t\t\t------------------------------------------");
+								printf("\n\t\t\t\t<<<<<<<<<<<<<< PANEER CRISPY >>>>>>>>>>>>>");
+								printf("\n\t\t\t\t------------------------------------------");
+								printf("\n \t\t\t\t OFFER\t  : GET UPTO 50% OFF ON YOUR FIRST ORDER");
+								printf("\n \t\t\t\t COURSE\t  : Starter");
+								printf("\n \t\t\t\t QUALITY  : Fresh Food");
+								printf("\n \t\t\t\t QUANTITY : Full-Plate");
+				 				printf("\n \t\t\t\t CATEGORY : Veg");
+				 				printf("\n \t\t\t\t PRICE\t  : Rs 499/-");
+								printf("\n \t\t\t\t FREE DELIVERY");
+				 				printf("\n \t\t\t\t ORDER NOW(Y/N)");
+					 			fflush(stdin);
+	                    		scanf("%c",&ch);
+	                     		if((ch=='Y')||(ch=='y'))
+	                     		{
+	                     	
+	                     			FILE *fp32;
+	                         		fp32=fopen("Paneer_crispy_Coustomer_Rec.txt","a");
+	                         		fflush(stdin);            
+	                         		printf("\n \t\t\t\t Enter Your Name:-");
+						 			scanf("%s",coustomer.name);
+						 			fflush(stdin);
+                         			printf("\n \t\t\t\t Enter Your Email:-");
+									scanf("%s",coustomer.email);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Adderess:-");
+									scanf("%s",coustomer.add);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Phone Number:-");
+						 			scanf("%s",coustomer.ph);
+									fflush(stdin);
+	                         		fprintf(fp32,"%s \n%s \n%s \n%s\n",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+	                         
+						   			printf("\n \t\t\t\t Your Order is confirmed");
+					   				printf("\n \t\t\t\t Do Want To Continue Purchasing");
+						   	 		fflush(stdin);
+						   	 		scanf("%c",&ch);
+						   	 		if((ch=='Y')||(ch=='y'))
+						   			{
+						   				go();
+						   	 	
+						 		    }
+	                         		fclose(fp32); 
+	                         		
+						        }
+						        break;
+						case 3: printf("\n\t\t\t\t------------------------------------------");
+								printf("\n\t\t\t\t<<<<<<<<<<<<<<<< VEG MOMOS >>>>>>>>>>>>>>>");
+								printf("\n\t\t\t\t------------------------------------------");
+								printf("\n \t\t\t\t OFFER\t  : GET UPTO 50% OFF ON YOUR FIRST ORDER");
+								printf("\n \t\t\t\t COURSE\t  : Starter");
+								printf("\n \t\t\t\t QUALITY  : Fresh Food");
+								printf("\n \t\t\t\t QUANTITY : Full-Plate");
+				 				printf("\n \t\t\t\t CATEGORY : Veg");
+				 				printf("\n \t\t\t\t PRICE\t  : Rs 599/-");
+								printf("\n \t\t\t\t FREE DELIVERY");
+				 				printf("\n \t\t\t\t ORDER NOW(Y/N)");
+					 			fflush(stdin);
+	                    		scanf("%c",&ch);
+	                     		if((ch=='Y')||(ch=='y'))
+	                     		{	
+	                     		
+	                     			FILE *fp33;
+	                         		fp33=fopen("Veg_momos_Coustomer_Rec.txt","a");
+	                         		fflush(stdin);            
+	                         		printf("\n \t\t\t\t Enter Your Name:-");
+						 			scanf("%s",coustomer.name);
+						 			fflush(stdin);
+                         			printf("\n \t\t\t\t Enter Your Email:-");
+									scanf("%s",coustomer.email);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Adderess:-");
+									scanf("%s",coustomer.add);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Phone Number:-");
+						 			scanf("%s",coustomer.ph);
+	                         		fprintf(fp33,"%s \n%s \n%s \n%s\n",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+	                        		
+									printf("\n \t\t\t\t Your Order is confirmed");
+					   				printf("\n \t\t\t\t Do Want To Continue Purchasing");
+						   	 		fflush(stdin);
+						   	 		scanf("%c",&ch);
+						   	 		if((ch=='Y')||(ch=='y'))
+						   	 		{
+						   	 			go();
+						   	 	
+							 		}
+	                      			fclose(fp33); 
+	                           		
+					     		}
+					     		break;
+					    case 4:	printf("\n\t\t\t\t------------------------------------------");
+								printf("\n\t\t\t\t<<<<<<<<<<<<< VEG.FRIED RICE >>>>>>>>>>>>>");
+								printf("\n\t\t\t\t------------------------------------------");
+								printf("\n \t\t\t\t OFFER\t  : GET UPTO 50% OFF ON YOUR FIRST ORDER");
+								printf("\n \t\t\t\t COURSE\t  : Main Course");
+								printf("\n \t\t\t\t QUALITY  : Fresh Food");
+								printf("\n \t\t\t\t QUANTITY : Full-Plate");
+				 				printf("\n \t\t\t\t CATEGORY : Veg");
+				 				printf("\n \t\t\t\t PRICE\t  : Rs 499/-");
+								printf("\n \t\t\t\t FREE DELIVERY");
+				 				printf("\n \t\t\t\t ORDER NOW(Y/N)");
+					 			fflush(stdin);
+	                    		scanf("%c",&ch);
+	                     		if((ch=='Y')||(ch=='y'))
+	                     		{	
+	                     		
+	                     			FILE *fp34;
+	                        		fp34=fopen("Veg_Fried_Rice_Coustomer_Rec.txt","a");
+	                     			fflush(stdin);            
+	                    			printf("\n \t\t\t\t Enter Your Name:-");
+						 			scanf("%s",coustomer.name);
+						 			fflush(stdin);
+                         			printf("\n \t\t\t\t Enter Your Email:-");
+									scanf("%s",coustomer.email);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Adderess:-");
+									scanf("%s",coustomer.add);
+									fflush(stdin);
+                        			printf("\n \t\t\t\t Enter Your Phone Number:-");
+						 			scanf("%s",coustomer.ph);
+	                        		fprintf(fp34,"%s \n%s \n%s \n%s\n",coustomer.name,coustomer.email,coustomer.add,coustomer.ph);
+	                         
+						   			printf("\n \t\t\t\t Your Order is confirmed");
+					   				printf("\n \t\t\t\t Do Want To Continue Purchasing");
+						   			fflush(stdin);
+						   	 		scanf("%c",&ch);
+						   	 		if((ch=='Y')||(ch=='y'))
+									{
+						 				go();
+						   	 	
+									}
+						   			fclose(fp34); 
+	                       						  	
+	                       		}
+												  	
+	                            default: printf("\n \t\t\t\t Please Select Your Right Choise");
+					       		break;	
+					}
+					break;
+			case 3:	printf("\n\t\t\t\t------------------------------------------");
+					printf("\n\t\t\t\t<<<<<<<<<<<<<< SHOW RECORD >>>>>>>>>>>>>>>");
+					printf("\n\t\t\t\t------------------------------------------");
+					printf("\n \t\t\t\t\t Select Your Choice");
+					printf("\n \t\t\t\t\t 1.....Non-Veg Coustomer Record");
+					printf("\n \t\t\t\t\t 2.....Veg Coustomer Record");
+					fflush(stdin);
+					scanf("%d",&no);
+					if(no==1)
+					{
+						printf("\n\t\t\t\t------------------------------------------");
+						printf("\n\t\t\t\t<<<<<<<< NON-VEG COUSTOMER RECORD >>>>>>>>");
+						printf("\n\t\t\t\t------------------------------------------");
+						printf("\n \t\t\t\t\t Select your choice");
+						printf("\n \t\t\t\t\t 1...Chicken Tikka Masala");
+						printf("\n \t\t\t\t\t 2...Tandoori Chicken");
+						printf("\n \t\t\t\t\t 3...Chicken Biryani");
+						printf("\n \t\t\t\t\t 4...Chicken Lollipop");
+						scanf("%d",&n1);
+						switch(n1)
+					  	{
+					  		case 1: chicken_tikka();
+                   				    break;  
+							case 2: tandor_chicken();
+							        break;
+							case 3: chicken_biryani();
+							        break;
+							case 4: chicken_lollipop();
+							        break;
+						}
+					}
+					else if(no==2)  
+					{
+					  		printf("\n\t\t\t\t------------------------------------------");
+							printf("\n\t\t\t\t<<<<<<<<<< VEG COUSTOMER RECORD >>>>>>>>>>");
+							printf("\n\t\t\t\t------------------------------------------");
+							printf("\n \t\t\t\t\t Select your choise");
+	       		   			printf("\n \t\t\t\t\t 1...Paneer Chilly");
+    	           			printf("\n \t\t\t\t\t 2...Paneer Crispy");
+    	            		printf("\n \t\t\t\t\t 3...Veg Momos");
+    	            		printf("\n \t\t\t\t\t 4...Veg.Fried Rice");
+							scanf("%d",&n2);
+							switch(n2)
+							{
+							 	case 1: Paneer_chilly_Rec();
+                   				 	    break;  
+								case 2: Paneer_crispy_Rec();
+							     	    break;
+								case 3: Veg_momos_Rec();
+							   		    break;
+								case 4: Veg_Fried_Rice_Rec();
+							  		    break;
+							}
+					}   
+			        break;
+			case 4:	printf("\n\t\t\t\t------------------------------------------");
+					printf("\n\t\t\t\t<<<<<<<<<<<<< UPDATE RECORD >>>>>>>>>>>>>>");
+					printf("\n\t\t\t\t------------------------------------------");
+					printf("\n \t\t\t\t\t Select your choice");
+					printf("\n \t\t\t\t\t 1.....NON-VEG Rec Update");
+					printf("\n \t\t\t\t\t 2.....VEG Rec Update");
+					fflush(stdin);
+					scanf("%d",&n4);
+					if(n4==1)
+					{
+						printf("\n\t\t\t\t------------------------------------------");
+						printf("\n\t\t\t\t<<<<<<<<<<< NON-VEG REC UPDATE >>>>>>>>>>>");
+						printf("\n\t\t\t\t------------------------------------------");
+						printf("\n \t\t\t\t\t Select your choice");
+						printf("\n \t\t\t\t\t 1...Chicken Tikka Masala");
+						printf("\n \t\t\t\t\t 2...Tandoori Chicken");
+						printf("\n \t\t\t\t\t 3...Chicken Biryani");
+						printf("\n \t\t\t\t\t 4...Chicken Lollipop");
+						scanf("%d",&n1);
+						switch(n1)
+					  	{
+					  		case 1: chicken_tikka_upd();
+                   				    break;
+							case 2:	tandor_chicken_upd();
+									break;
+							case 3:	chicken_biryani_upd();
+									break;
+    						case 4: chicken_lollipop_upd();
+    								break;
+						}
+					}
+					else if(n4==2)  
+					{
+					  		printf("\n\t\t\t\t------------------------------------------");
+							printf("\n\t\t\t\t<<<<<<<<<<<<< VEG REC UPDATE >>>>>>>>>>>>>");
+							printf("\n\t\t\t\t------------------------------------------");
+							printf("\n \t\t\t\t\t Select your choise");
+	       		   			printf("\n \t\t\t\t\t 1...Paneer Chilly");
+    	           			printf("\n \t\t\t\t\t 2...Paneer Crispy");
+    	            		printf("\n \t\t\t\t\t 3...Veg Momos");
+    	            		printf("\n \t\t\t\t\t 4...Veg.Fried Rice");
+							scanf("%d",&n2);
+							switch(n2)
+						    {
+								case 1 :Paneer_chilly_upd();
+										break;
+								case 2:	Paneer_crispy_upd();
+										break;	
+								case 3:	Veg_momos_upd();
+										break;
+								case 4:	Veg_Fried_Rice_upd(); 
+            	   						break;
+ 							}
+       				}	
+					break;
+			case 5:	printf("\n\t\t\t\t------------------------------------------");
+					printf("\n\t\t\t\t<<<<<<<<<<<<< DELETE RECORD >>>>>>>>>>>>>>");
+					printf("\n\t\t\t\t------------------------------------------");
+					printf("\n \t\t\t\t\t Select your choice");
+					printf("\n \t\t\t\t\t 1.....NON-VEG_rec");
+					printf("\n \t\t\t\t\t 2.....VEG_rec");
+					fflush(stdin);
+					scanf("%d",&n4);
+					if(n4==1)
+					{
+						printf("\n\t\t\t\t------------------------------------------");
+						printf("\n\t\t\t\t<<<<<<<<<<<<< NON-VEG RECORD >>>>>>>>>>>>>>");
+						printf("\n\t\t\t\t------------------------------------------");
+						printf("\n \t\t\t\t\t Select your choice");
+						printf("\n \t\t\t\t\t 1...Chicken Tikka Masala");
+						printf("\n \t\t\t\t\t 2...Tandoori Chicken");
+						printf("\n \t\t\t\t\t 3...Chicken Biryani");
+						printf("\n \t\t\t\t\t 4...Chicken Lollipop");
+						scanf("%d",&n1);
+						switch(n1)
+					  	{
+					  		case 1: chicken_tikka_del();
+                   				    break;
+    						case 2: tandor_chicken_del();
+    								break;
+    						case 3:	chicken_biryani_del();
+    								break;
+    						case 4:	chicken_lollipop_del();
+    								break;
+						}
+						
+					}
+					else if(n4==2)  
+					{
+					  		printf("\n\t\t\t\t------------------------------------------");
+							printf("\n\t\t\t\t<<<<<<<<<<<<<< VEG RECORD >>>>>>>>>>>>>>>>");
+							printf("\n\t\t\t\t------------------------------------------");
+							printf("\n \t\t\t\t\t Select your choise");
+	       		   			printf("\n \t\t\t\t\t 1...Paneer Chilly");
+    	           			printf("\n \t\t\t\t\t 2...Paneer Crispy");
+    	            		printf("\n \t\t\t\t\t 3...Veg Momos");
+    	            		printf("\n \t\t\t\t\t 4...Veg.Fried Rice");
+							scanf("%d",&n2);
+							
+							switch(n2)
+						    {
+								case 1:	Paneer_chilly_del();
+										break;
+								case 2:	Paneer_crispy_del();
+										break;	
+								case 3:	Veg_momos_del();
+										break;
+								case 4:	Veg_Fried_Rice_del(); 
+            	   						break;
+ 							}
+					}								
+					break;
+		}
+		
+}
+					 			
+
+		
+
